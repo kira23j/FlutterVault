@@ -12,7 +12,7 @@ To run any of these projects locally or explore the source code, follow these ge
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/flutter-mobile-app-projects.git
+   git clone https://github.com/kira23j/Flutter-mobile-app-projects.git
 2. **Navigate to a Project Directory:**
    ```bash
    cd flutter-mobile-app-projects/ProjectDirectoryName
