@@ -1,7 +1,4 @@
 # Flutter-mobile-app-projects
-# Flutter Mobile App Projects
-
-![Flutter Logo](https://flutter.dev/images/flutter-logo-sharing.png)
 
 Welcome to the "Flutter Mobile App Projects" repository! This collection features various mobile app projects developed using Flutter, a versatile UI toolkit, and Firebase as the backend service. Whether you are a Flutter enthusiast or a developer looking for inspiration, this repository showcases a diverse set of projects that demonstrate the capabilities of Flutter in conjunction with Firebase for building modern and scalable mobile applications.
 
