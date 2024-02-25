@@ -1,4 +1,4 @@
-package com.example.tf_quiz
+package com.example.currency_converter
 
 import io.flutter.embedding.android.FlutterActivity
 
