@@ -24,6 +24,7 @@ Welcome to the "Flutter Mobile App Projects" repository! This collection feature
  
 
  <hr>
+ 
 ## Projects
 
 Explore different mobile app projects within this repository. Each project is contained in its respective directory, and you can find detailed instructions in each project's individual README.md file.
@@ -34,10 +35,10 @@ To run any of these projects locally or explore the source code, follow these ge
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/kira23j/Flutter-mobile-app-projects.git
+   git clone https://github.com/kira23j/FlutterVault.git
 2. **Navigate to a Project Directory:**
    ```bash
-   cd flutter-mobile-app-projects/ProjectDirectoryName
+   cd FlutterVault/ProjectDirectoryName
 3. **Run the App:**
     Follow the instructions in the project's README to set up and run the app.
  ##  Contributing
