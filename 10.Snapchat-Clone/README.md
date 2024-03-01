@@ -1,1 +1,0 @@
-# Simple shoe sell mobile app
