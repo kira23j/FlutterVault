@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final TextEditingController textController = TextEditingController();
   final FireStoreService fireStoreService = FireStoreService();
-  void openNoteBox() {
+  void openNoteBox(String? docID) {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -22,7 +22,12 @@ class _HomePageState extends State<HomePage> {
               actions: [
                 ElevatedButton(
                     onPressed: () {
-                      fireStoreService.addNote(textController.text);
+                      if (docID == null) {
+                        fireStoreService.addNote(textController.text);
+                      } else {
+                        fireStoreService.updateNote(docID, textController.text);
+                      }
+
                       textController.clear();
                       Navigator.pop(context);
                     },
@@ -38,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         title: Text("Notes"),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: openNoteBox,
+        onPressed: () => openNoteBox(null),
         child: Icon(Icons.add),
       ),
       body: StreamBuilder<QuerySnapshot>(
@@ -50,14 +55,23 @@ class _HomePageState extends State<HomePage> {
               itemCount: notesList.length,
               itemBuilder: (context, index) {
                 DocumentSnapshot document = notesList[index];
+                String docID = document.id;
 
                 Map<String, dynamic> data =
                     document.data() as Map<String, dynamic>;
                 String noteText = data['note'];
 
                 return ListTile(
-                  title: Text(noteText),
-                );
+                    title: Text(noteText),
+                    trailing: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        IconButton(
+                          onPressed: () => openNoteBox(docID),
+                          icon: Icon(Icons.settings),
+                        )
+                      ],
+                    ));
               },
             );
           } else {
