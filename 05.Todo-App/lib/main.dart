@@ -1,86 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:todo_app/providers.dart';
 
 void main() {
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Home(),
+    return MaterialApp(
+      title: 'Todo-App',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(title: 'Todo-App'),
     );
   }
 }
 
-// This widget is the root of your application.
-class Home extends ConsumerWidget {
-  const Home({super.key});
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+  final String title;
+
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    int counter = ref.watch(counterProvider);
-    CounterNotifier counterController = ref.watch(counterProvider.notifier);
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Riverpod "),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextButton(
-                onPressed: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => Second()));
-                },
-                child: Text("go to secound screen")),
-            Text(
-              "Counter:$counter",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            TextButton(
-              onPressed: () {
-                counterController.add();
-              },
-              child: const Text("Add"),
-            )
-          ],
-        ),
-      ),
-    );
-  }
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class Second extends ConsumerWidget {
-  const Second({super.key});
+class _MyHomePageState extends State<MyHomePage> {
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    int counter = ref.watch(counterProvider);
-    CounterNotifier counterController = ref.watch(counterProvider.notifier);
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Riverpod secound"),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Counter on secound screen:$counter",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Second()));
-              },
-              child: const Text("Go to second screen"),
-            )
-          ],
-        ),
+      body: Center(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
       ),
     );
   }
