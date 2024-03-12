@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/pages/add.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,7 +40,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const AddTodo()),
+          );
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
