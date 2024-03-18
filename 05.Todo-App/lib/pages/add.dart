@@ -7,7 +7,7 @@ class AddTodo extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    TextEditingController todoControl = TextEditingController();
+    TextEditingController todoController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Add Todo"),
@@ -19,13 +19,14 @@ class AddTodo extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
-                controller: todoControl,
+                controller: todoController,
                 decoration: InputDecoration(border: OutlineInputBorder()),
               ),
             ),
             TextButton(
               onPressed: () {
-                ref.read(todoProvider.notifier).addTodo(todoControl.text);
+                ref.read(todoProvider.notifier).addTodo(todoController.text);
+                Navigator.pop(context);
               },
               child: const Text("Add Todo"),
             )

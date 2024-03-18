@@ -1,11 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_app/models/todo.dart';
 
-final todoProvider = StateNotifierProvider<TodoListNotifier, List>((ref) {
+final todoProvider = StateNotifierProvider<TodoListNotifier, List<Todo>>((ref) {
   return TodoListNotifier();
 });
 
-class TodoListNotifier extends StateNotifier<List> {
+class TodoListNotifier extends StateNotifier<List<Todo>> {
   TodoListNotifier() : super([]);
 
   void addTodo(String content) {
@@ -32,7 +32,7 @@ class TodoListNotifier extends StateNotifier<List> {
     ];
   }
 
-  void deleteTodo() {
-    state = state.where((todo) => todo.todoID).toList();
+  void deleteTodo(int id) {
+    state = state.where((todo) => todo.todoID != id).toList();
   }
 }
