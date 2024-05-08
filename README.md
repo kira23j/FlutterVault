@@ -2,29 +2,7 @@
 
 Welcome to the "Flutter Mobile App Projects" repository! This collection features various mobile app projects developed using Flutter, a versatile UI toolkit, and Firebase as the backend service. Whether you are a Flutter enthusiast or a developer looking for inspiration, this repository showcases a diverse set of projects that demonstrate the capabilities of Flutter in conjunction with Firebase for building modern and scalable mobile applications.
 <hr>
-<h1 align="center">Latest Top 3 Flutter Projects!</h1>
-<h2><a hre="https://github.com/kira23j/WebTriad/tree/main/Flask-Projects/01.Customer-Segmentation-ML"><b>Coming Soon!</b></a></h2>
-<p align="justify">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius massa. Sed vel purus vitae velit tincidunt tristique.
- </p>
- </p>
- <hr>
 
-<h2><a hre="https://github.com/kira23j/WebTriad/tree/main/Flask-Projects/01.Customer-Segmentation-ML"><b>Coming Soon!</b></a></h2>
-<p align="justify">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius massa. Sed vel purus vitae velit tincidunt tristique.
- </p>
-
- <hr>
-
-<h2><a hre="https://github.com/kira23j/WebTriad/tree/main/Flask-Projects/01.Customer-Segmentation-ML"><b>Coming Soon!</b></a></h2>
-<p align="justify">
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius massa. Sed vel purus vitae velit tincidunt tristique.
- </p>
- 
-
- <hr>
- 
 ## Projects
 
 Explore different mobile app projects within this repository. Each project is contained in its respective directory, and you can find detailed instructions in each project's individual README.md file.
